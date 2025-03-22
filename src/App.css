@@ -6,10 +6,11 @@
   --color-main-10: #13131316;
   --color-main-70: #131313AA;
   --font-sora:"Sora", sans-serif;
+  --color-bground : #ffffff;
 }
 
 #root {
-  max-width: 1280px;
+  max-width: 1366px;
   margin: 0 auto;
   text-align: center;
 }
