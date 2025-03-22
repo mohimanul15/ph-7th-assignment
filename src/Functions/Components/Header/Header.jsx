@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import Coin from '../../../assets/coin.png';
 import Logo from '../../../../src/assets/logo.png';
 
-const Header = () => {
+const Header = ({currentBal}) => {
     return (
         <div className='backdrop-blur-lg py-6 sticky top-0'>
 
@@ -9,7 +10,7 @@ const Header = () => {
 
                 {/* Logo */}
                 <div>
-                    <img src={Logo} alt="" srcset="" className='w-16 md:w-18'/>
+                    <img src={Logo} className='w-16 md:w-18'/>
                 </div>
 
                 {/* Menu and Button */}
@@ -30,9 +31,8 @@ const Header = () => {
                     <div>
                         <button className='flex gap-1.5 items-center lg:py-4 lg:px-5
                         py-2 px-3 border-2 border-main-10 rounded-xl text-main-100'>
-                            <h4 className='font-semibold text-sm lg:text-base'>54000</h4>
-                            <h4 className='font-semibold text-sm lg:text-base'>Coin</h4>
-                            <img src={Coin} alt="" srcset="" className='w-7 h-auto'/>
+                            <h4 className='font-semibold text-sm lg:text-base'>{currentBal} Coin</h4>
+                            <img src={Coin} className='w-7 h-auto'/>
                         </button>
                     </div>
 
@@ -42,5 +42,9 @@ const Header = () => {
         </div>
     );
 };
+
+Header.PropTypes = {
+    currentBal: PropTypes.number.isRequired
+}
 
 export default Header;

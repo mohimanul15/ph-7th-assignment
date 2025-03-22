@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import Bmain from '../../../../src/assets/banner-main.png'
 import Bground from '../../../../src/assets/bg-shadow.png';
 
-const Hero = () => {
+const Hero = ({updateBal}) => {
 
     const customCss = {
         backgroundImage: `url(${Bground})`,
@@ -18,7 +19,7 @@ const Hero = () => {
                 <div className='mx-auto max-w-4xl flex flex-col justify-center'>
 
                     <div className='mx-auto'>
-                        <img src={Bmain} alt="" srcset="" className='w-40 lg:w-auto'/>
+                        <img src={Bmain} className='w-40 lg:w-auto'/>
                     </div>
                     
                     
@@ -27,11 +28,13 @@ const Hero = () => {
                         Assemble Your Ultimate Dream 11 Cricket Team
                         </h2>
 
-                        <p className='mt-4 text-white opacity-70'>
+                        <p className='mt-4 text-white opacity-70 font-inter text-lg lg:text-2xl font-medium'>
                         Beyond Boundaries Beyond Limits
                         </p>
 
-                        <button className='btn'>Claim Free Credit</button>
+                        <div className='border-2 border-btn hover:border-amber-500 p-1 md:p-2 w-fit mx-auto mt-6 rounded-2xl'>
+                            <button className='bg-btn hover:bg-amber-500 text-black py-1 px-2 lg:py-3 lg:px-5 text-sm md:text-base font-bold rounded-xl inset-shadow-2xs cursor-pointer' onClick={()=>updateBal(750000)}>Claim Free Credit</button>
+                        </div>
                     </div>
 
                 </div>
@@ -40,5 +43,10 @@ const Hero = () => {
         </main>
     );
 };
+
+
+Hero.propTypes = {
+    updateBal: PropTypes.func.isRequired
+}
 
 export default Hero;
