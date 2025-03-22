@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 @import "tailwindcss";
+
+@theme{
+  --color-main-100: #131313ff;
+  --color-main-10: #13131316;
+  --color-main-70: #131313AA;
+  --font-sora:"Sora", sans-serif;
+}
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }

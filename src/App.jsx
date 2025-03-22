@@ -1,12 +1,15 @@
 import './App.css'
+import Hero from './Functions/Components/Body/Hero';
+import Header from './Functions/Components/Header/Header';
+import Footer from './Functions/Components/Footer/Footer'
 
 function App() {
 
   return (
     <>
-      <p className='p-4 text-8xl font-extrabold'>
-        hell0
-      </p>
+      <Header></Header>
+      <Hero></Hero>
+      <Footer></Footer>
     </>
   )
 }
