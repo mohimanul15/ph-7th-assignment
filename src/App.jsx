@@ -5,7 +5,7 @@ import Footer from './Functions/Components/Footer/Footer'
 import { useEffect, useState } from 'react';
 import Containts from './Functions/Components/Body/Containts';
 import { Flip, ToastContainer} from 'react-toastify';
-import {alreadyInTeam, alreadySixPlayer, notEnoughCoin, playerAddedToast} from './Functions/Utilities/utilities';
+import {alreadyInTeam, alreadySixPlayer, collectCoin, notEnoughCoin, playerAddedToast} from './Functions/Utilities/utilities';
 
 function App() {
 
@@ -56,6 +56,7 @@ function App() {
   const updateBal = bal => {
     const newBal = currentBal + bal;
     setCurrentBal(newBal);
+    collectCoin();
   }
 
   

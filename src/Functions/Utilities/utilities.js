@@ -56,4 +56,18 @@ const alreadyInTeam = () =>{
     });
 }
 
-export {playerAddedToast , notEnoughCoin ,alreadySixPlayer,alreadyInTeam}
+const collectCoin = () =>{
+    return toast.success('WOW you have got 750000 Coin', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Flip,
+    });
+}
+
+export {collectCoin ,playerAddedToast , notEnoughCoin ,alreadySixPlayer,alreadyInTeam}
