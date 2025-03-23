@@ -6,7 +6,7 @@ const Header = ({currentBal}) => {
     return (
         <div className='backdrop-blur-lg py-6 sticky top-0'>
 
-            <div className='flex justify-between container mx-auto px-2 md:px-3'>
+            <div className='cont flex justify-between container mx-auto px-2 md:px-3'>
 
                 {/* Logo */}
                 <div>

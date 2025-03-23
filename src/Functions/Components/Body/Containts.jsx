@@ -24,8 +24,8 @@ const Containts = ( {choosenPlayer, teamMember, myTeam, playerDelete} ) => {
     },[])
 
     return (
-        <section>
-            <div className="mt-10 mb-6 px-4 flex items-center justify-between">
+        <section className="cont">
+            <div className="mt-10 mb-6 px-4 flex items-center max-sm:flex-col justify-between">
                 <div>
                     <h3 
                         className="text-xl lg:text-3xl font-bold">
@@ -33,12 +33,12 @@ const Containts = ( {choosenPlayer, teamMember, myTeam, playerDelete} ) => {
                     </h3>
                 </div>
 
-                <div>
-                    <button className={"py-4 px-8 "+ (isAvailable? "font-bold bg-btn text-main-100": "font-normal bg-transparent text-main-70") +" text-base border-2 border-main-10 rounded-l-2xl"} onClick={()=>btnClickManager(true)}>
+                <div className="flex flex-wrap gap-4 sm:gap-0 max-sm:flex-col">
+                    <button className={"py-4 px-8 "+ (isAvailable? "font-bold bg-btn text-main-100": "font-normal bg-transparent text-main-70") +" text-base border-2 border-main-10 max-md:rounded-2xl sm:rounded-l-2xl"} onClick={()=>btnClickManager(true)}>
                         Available
                     </button>
                     
-                    <button className={"py-4 px-8 "+ (!isAvailable? "font-bold bg-btn text-main-100": "font-normal bg-transparent text-main-70") +" text-base border-2 border-main-10 rounded-r-2xl"} onClick={()=>btnClickManager(false)}>
+                    <button className={"py-4 px-8 "+ (!isAvailable? "font-bold bg-btn text-main-100": "font-normal bg-transparent text-main-70") +" text-base border-2 border-main-10 max-md:rounded-2xl sm:rounded-r-2xl"} onClick={()=>btnClickManager(false)}>
                         Selected ( {teamMember} )
                     </button>
                 </div>

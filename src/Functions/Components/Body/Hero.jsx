@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Bmain from '../../../../src/assets/banner-main.png'
+import Bmain from '../../../../src/assets/banner-main.png';
 import Bground from '../../../../src/assets/bg-shadow.png';
 
 const Hero = ({updateBal}) => {
@@ -10,7 +10,7 @@ const Hero = ({updateBal}) => {
     }
 
     return (
-        <main className='mx-3'>
+        <main className='mx-3 cont'>
             <div
                 style={customCss}
                 className='py-16 px-2.5 rounded-3xl bg-[#1e1e1e] w-full'

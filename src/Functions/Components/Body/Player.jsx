@@ -47,7 +47,7 @@ const Player = ({singleData, choosenPlayer}) => {
                     <hr  className="my-4 opacity-30 h-1"/>
 
                     {/* Rating */}
-                    <div className="font-bold text-base text-main-100">
+                    <div className="font-bold text-sm md:text-base text-main-100">
                         <div className="flex mb-2">
                             <h4>Rating</h4>
                         </div>

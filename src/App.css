@@ -15,9 +15,13 @@
 }
 
 #root {
-  max-width: 1366px;
   margin: 0 auto;
   text-align: center;
+}
+
+.cont{
+  max-width: 1366px;
+  margin: 0 auto;
 }
 
 button{
