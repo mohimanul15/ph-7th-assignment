@@ -3,7 +3,7 @@ import Selected from "./Selected";
 import Players from './Players';
 import PropTypes from "prop-types";
 
-const Containts = ( {choosenPlayer, teamMember} ) => {
+const Containts = ( {choosenPlayer, teamMember, myTeam, playerDelete} ) => {
 
     const [playersData,setPlayersData] = useState([]);
 
@@ -11,6 +11,10 @@ const Containts = ( {choosenPlayer, teamMember} ) => {
 
     const btnClickManager = isVal =>{
         setIsAvailable(isVal);
+    }
+
+    const changeToPlayer = pageVal =>{
+        setIsAvailable(pageVal);
     }
 
     useEffect(()=>{
@@ -23,7 +27,10 @@ const Containts = ( {choosenPlayer, teamMember} ) => {
         <section>
             <div className="mt-10 mb-6 px-4 flex items-center justify-between">
                 <div>
-                    <h3 className="text-xl lg:text-3xl font-bold">Available Players</h3>
+                    <h3 
+                        className="text-xl lg:text-3xl font-bold">
+                        {isAvailable?'Available Players':`Selected Players (${myTeam.length}/6)`}
+                    </h3>
                 </div>
 
                 <div>
@@ -42,7 +49,11 @@ const Containts = ( {choosenPlayer, teamMember} ) => {
             <div className="py-4">
                 {isAvailable?
                     <Players playersData = {playersData} choosenPlayer = {choosenPlayer}></Players>:
-                    <Selected></Selected>}
+                    <Selected 
+                        myTeam={myTeam} 
+                        playerDelete={playerDelete}
+                        changeToPlayer={changeToPlayer}>
+                    </Selected>}
             </div>    
         </section>
     );
@@ -50,7 +61,9 @@ const Containts = ( {choosenPlayer, teamMember} ) => {
 
 Containts.PropTypes = {
     choosenPlayer: PropTypes.func.isRequired,
-    teamMember: PropTypes.number.isRequired
+    teamMember: PropTypes.number.isRequired,
+    myTeam: PropTypes.array.isRequired,
+    playerDelete: PropTypes.func.isRequired
 }
 
 export default Containts;

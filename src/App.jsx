@@ -4,6 +4,8 @@ import Header from './Functions/Components/Header/Header';
 import Footer from './Functions/Components/Footer/Footer'
 import { useEffect, useState } from 'react';
 import Containts from './Functions/Components/Body/Containts';
+import { Flip, ToastContainer} from 'react-toastify';
+import {alreadyInTeam, alreadySixPlayer, notEnoughCoin, playerAddedToast} from './Functions/Utilities/utilities';
 
 function App() {
 
@@ -16,11 +18,27 @@ function App() {
     setTeamMember(myTeam.length);
   },[myTeam])
 
+  const playerDelete = idk =>{
+    let newTeam = myTeam.filter(member=>{
+      if(member.playerId !== idk){
+        return member;
+      }
+    })
+
+    setMyTeam(newTeam);
+    console.log(newTeam);
+  }
+
   function choosenPlayer(playerInfo){
+
+    if(myTeam.length === 6){
+      alreadySixPlayer();
+      return
+    }
 
     for(const singleMem of myTeam){
       if(singleMem.playerId === playerInfo.playerId){
-        console.log('Same player');
+        alreadyInTeam();
         return 
       }
     }
@@ -28,6 +46,9 @@ function App() {
     if(playerInfo.biddingPrice <= currentBal){
         setMyTeam([...myTeam,playerInfo]);
         setCurrentBal(currentBal - playerInfo.biddingPrice);
+        playerAddedToast();
+    }else{
+      notEnoughCoin();
     }
 
   }
@@ -37,12 +58,35 @@ function App() {
     setCurrentBal(newBal);
   }
 
+  
+
   return (
     <>
       <Header currentBal={currentBal}></Header>
       <Hero updateBal={updateBal}></Hero>
-      <Containts choosenPlayer = {choosenPlayer} teamMember = {teamMember}></Containts>
+
+      <Containts 
+                choosenPlayer = {choosenPlayer}
+                teamMember = {teamMember} 
+                myTeam = {myTeam}
+                playerDelete={playerDelete}>
+      </Containts>
+      
       <Footer></Footer>
+
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Flip}
+      />
     </>
   )
 }
