@@ -16,11 +16,17 @@ function App() {
     setTeamMember(myTeam.length);
   },[myTeam])
 
-  const choosenPlayer =async (playerInfo) => {
+  function choosenPlayer(playerInfo){
+
+    for(const singleMem of myTeam){
+      if(singleMem.playerId === playerInfo.playerId){
+        console.log('Same player');
+        return 
+      }
+    }
 
     if(playerInfo.biddingPrice <= currentBal){
-        const newTeam = [...myTeam,playerInfo];
-        setMyTeam(newTeam);
+        setMyTeam([...myTeam,playerInfo]);
         setCurrentBal(currentBal - playerInfo.biddingPrice);
     }
 
