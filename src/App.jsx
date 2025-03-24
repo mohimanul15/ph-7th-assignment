@@ -26,7 +26,7 @@ function App() {
     })
 
     setMyTeam(newTeam);
-    console.log(newTeam);
+    // console.log(newTeam);
   }
 
   function choosenPlayer(playerInfo){

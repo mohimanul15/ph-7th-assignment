@@ -18,7 +18,7 @@ const Containts = ( {choosenPlayer, teamMember, myTeam, playerDelete} ) => {
     }
 
     useEffect(()=>{
-        fetch('public/players.json')
+        fetch('players.json')
         .then(res => res.json())
         .then(data => setPlayersData(data))
     },[])

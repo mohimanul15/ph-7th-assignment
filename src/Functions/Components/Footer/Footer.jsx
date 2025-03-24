@@ -1,5 +1,6 @@
 import Bmain from '../../../../src/assets/banner-main.png';
 import Bground from '../../../../src/assets/bg-shadow.png';
+import Logo from '../../../assets/logo.png';
 
 const Footer = () => {
 
@@ -42,7 +43,7 @@ const Footer = () => {
 
             <footer className='bg-[#121f5e] w-full pt-70 absolute'>
                 <div className='cont flex justify-center'>
-                    <img src="../../../../src/assets/logo.png" alt="" className='w-40 h-auto'/>
+                    <img src={Logo} alt="" className='w-40 h-auto'/>
                 </div>
 
                 <div className='flex justify-between max-w-6xl mx-auto py-7 flex-wrap px-3 gap-4'>

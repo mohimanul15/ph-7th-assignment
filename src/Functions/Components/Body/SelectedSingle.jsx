@@ -14,6 +14,7 @@ const SelectedSingle = ({single,playerDelete}) => {
                     <div className="text-start">
                         <h3 className="font-semibold text-base lg:text-2xl text-main-100">{single.name}</h3>
                         <p className="font-normal text-base text-main-70">{single.battingType}</p>
+                        <p>${single.biddingPrice}</p>
                     </div>
                 </div>
 
